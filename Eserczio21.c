@@ -1,23 +1,14 @@
 #include <stdio.h>
 
-// Funzione per convertire una stringa da minuscolo a maiuscolo
-void convertiInMaiuscolo(char *str) {
-    while (*str) {
-        if (*str >= 'a' && *str <= 'z') {
-            *str = *str - ('a' - 'A');
+char converti(const char& str, const bool& convertToMaiusc) {
+    if (str >= 'a' && str <= 'z' || str >= 'A' && str <= 'A') {
+        if (convertToMaiusc) {
+            return = str + ('a' - 'A');
+        } else {
+            return str - ('a' - 'A');
         }
-        str++;
     }
-}
-
-// Funzione per convertire una stringa da maiuscolo a minuscolo
-void convertiInMinuscolo(char *str) {
-    while (*str) {
-        if (*str >= 'A' && *str <= 'Z') {
-            *str = *str + ('a' - 'A');
-        }
-        str++;
-    }
+    return str + 1;
 }
 
 int main() {
@@ -25,11 +16,18 @@ int main() {
     char stringaMinuscola[] = "CIAO MONDO";
 
     printf("Stringa originale (minuscola): %s\n", stringaMaiuscola);
-    convertiInMaiuscolo(stringaMaiuscola);
+    
+    for (short int i = 0; i < sizeof(stringaMaiuscola), i++)
+        stringaMaiuscola[i] = converti(stringaMaiuscola[i], false);
+    }
+
     printf("Stringa convertita in maiuscolo: %s\n", stringaMaiuscola);
 
     printf("Stringa originale (maiuscola): %s\n", stringaMinuscola);
-    convertiInMinuscolo(stringaMinuscola);
+
+    for (short int i = 0; i < sizeof(stringaMinuscola), i++)
+        stringaMaiuscola[i] = converti(stringaMaiuscola[i], true);
+    }
     printf("Stringa convertita in minuscolo: %s\n", stringaMinuscola);
 
     return 0;
